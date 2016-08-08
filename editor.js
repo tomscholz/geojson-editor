@@ -168,8 +168,7 @@ function resizeGeoJsonInput() {
     geoJsonInput.style.height = panelRect.bottom - geoJsonInputRect.top - 8 + "px";
 }
 
-
-
+// Toggle visibility of the left panel
 function toggle_visibility(id) {
     var dis = document.getElementById(id);
     if (dis.style.display == 'block')
@@ -178,6 +177,7 @@ function toggle_visibility(id) {
         dis.style.display = 'block';
 }
 
+// Change width of the map
 function changeWidth(id) {
     var wid = document.getElementById(id);
     if (wid.style.width == '64.9%')
@@ -186,7 +186,7 @@ function changeWidth(id) {
         wid.style.width = '64.9%';
 }
 
-
+// Alert on unload
 window.onbeforeunload = function(){
   return 'Are you sure you want to leave?';
 };

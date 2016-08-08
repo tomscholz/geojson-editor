@@ -5,6 +5,5 @@ This is a modified version of Googles [Simple GeoJSON Editor](https://google-dev
 # Features
 
 + Prevents you from closing the tab accidentally
-+
 + Fancy button to toggle the visibility of the left panel
 + Performance improvements

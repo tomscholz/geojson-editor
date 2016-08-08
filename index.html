@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Simple GeoJSON Editor</title>
+    <title>Better GeoJSON Editor</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
     <link href="css/min/styles.min.css" rel="stylesheet" type="text/css">
-
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB21G62pnb0d8fT1gRhaenbzxRYasucbjI"></script>
     <script src="js/min/editor.min.js"></script>
 </head>
 <body>
     <div id="panel">
         <div id="panel-content">
-            <div id="panel-title">Complicated GeoJSON Editor</div>
-                <div class="form-status-holder"></div>
-            </div>
-            <hr/>
-            <div id="geojson-controls">
-                <button onclick="document.getElementById('geojson-input').select();">Select All</button>
-                <a id="download-link" href="data:;base64," download="geojson.json">
-                    <button>Download</button>
-                </a>
-            </div>
-            <textarea id="geojson-input" placeholder="Drag and drop GeoJSON onto the map or paste it here to begin editing."></textarea>
+            <div id="panel-title">Better GeoJSON Editor</div>
+            <div class="form-status-holder"></div>
         </div>
+        <hr/>
+        <div id="geojson-controls">
+            <button onclick="document.getElementById('geojson-input').select();">Select All</button>
+            <a id="download-link" href="data:;base64," download="geojson.json">
+                <button>Download</button>
+            </a>
+        </div>
+        <textarea id="geojson-input" placeholder="Drag and drop GeoJSON onto the map or paste it here to begin editing."></textarea>
     </div>
-    <button style="position: absolute; left:55%; top:1%; z-index: 10000;" href="#" onclick="toggle_visibility('panel'); changeWidth('map-container');">Toggle Panel</button>
-
+    <button style="position: absolute; left:55%; top:1%; z-index: 10000;" onclick="toggle_visibility('panel'); changeWidth('map-container');">Toggle Panel</button>
     <div id="map-container">
-
         <div id="map-holder"></div>
-
         <div id="drop-container">
             <div id="drop-silhouette"></div>
         </div>
     </div>
 </body>
-
 </html>

@@ -6,6 +6,9 @@ This is a modified version of Googles [Simple GeoJSON Editor](https://google-dev
 + Fancy button to toggle the visibility of the left panel
 + Performance improvements
 
+# Other tools
++ [Script to remove specific properties from geojson](https://gist.github.com/tomscholz/defaa75b7bcb3f2b21b5f047acdd8f77)
+
 # Coming soon...
 + Redesign
 + Autosave

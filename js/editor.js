@@ -184,6 +184,10 @@ function changeWidth(id) {
         wid.style.width = '100%';
     else
         wid.style.width = '64.9%';
+// Resize the map
+function resizeMap(map) {
+    google.maps.event.trigger(map, 'resize');
+    mapResized = true;
 }
 
 // Alert on unload

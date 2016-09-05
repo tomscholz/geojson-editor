@@ -156,41 +156,56 @@ function handleDrop(e) {
         if (plainText) {
             map.data.addGeoJson(JSON.parse(plainText));
         }
-    };
+    }
     // prevent drag event from bubbling further
     return false;
 }
 
-// Styling related functions.
+// Styling related functions
 function resizeGeoJsonInput() {
     var geoJsonInputRect = geoJsonInput.getBoundingClientRect();
     var panelRect = panel.getBoundingClientRect();
     geoJsonInput.style.height = panelRect.bottom - geoJsonInputRect.top - 8 + "px";
 }
 
-// Toggle visibility of the left panel
+// Custom JS by tomscholz
+
+var mapResized = false;
+
+// Toggle the visibility of the left panel
 function toggle_visibility(id) {
-    var dis = document.getElementById(id);
-    if (dis.style.display == 'block')
-        dis.style.display = 'none';
-    else
-        dis.style.display = 'block';
+    var displayState = document.getElementById(id);
+    if (displayState.style.display == 'block') {
+        displayState.style.display = 'none';
+    } else {
+        displayState.style.display = 'block';
+    }
 }
 
-// Change width of the map
+// Change width of the map when panel toggels
 function changeWidth(id) {
-    var wid = document.getElementById(id);
-    if (wid.style.width == '64.9%')
-        wid.style.width = '100%';
-    else
-        wid.style.width = '64.9%';
+    var width = document.getElementById(id);
+    if (width.style.width == '64.9%') {
+        width.style.width = '100%';
+    } else {
+        width.style.width = '64.9%';
+    }
+}
+
 // Resize the map
 function resizeMap(map) {
     google.maps.event.trigger(map, 'resize');
     mapResized = true;
 }
 
+// Call all functions at once
+function panelToggle() {
+    toggle_visibility('panel');
+    changeWidth('map-container');
+    resizeMap(map);
+}
+
 // Alert on unload
-window.onbeforeunload = function(){
-  return 'Are you sure you want to leave?';
+window.onbeforeunload = function() {
+    return 'Are you sure you want to leave?';
 };

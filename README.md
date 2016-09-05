@@ -12,7 +12,7 @@ This is a modified version of Googles [Simple GeoJSON Editor](https://google-dev
 # Coming soon...
 + Redesign
 + Autosave
-+ Possibility to add properties to a object
++ ~~Possibility to add properties to a object~~ ()
 
 # Can I contribute to this thing?
 Yes, of course! The process is as follows:

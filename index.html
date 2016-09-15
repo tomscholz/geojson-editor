@@ -5,30 +5,31 @@
     <title>Better GeoJSON editor</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link href="css/min/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="css/min/style.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <div id="panel">
-        <div id="panel-content">
-            <div id="panel-title">Better GeoJSON editor</div>
-            <hr/>
-            <div id="geojson-controls">
-                <button onclick="document.getElementById('geojson-input').select();">Select All</button>
-                <a id="download-link" href="data:;base64," download="geojson.json">
-                    <button>Download</button>
-                </a>
-            </div>
-            <textarea id="geojson-input" placeholder="Drag and drop GeoJSON onto the map or paste it here to begin editing."></textarea>
-        </div>
-    </div>
-    <button style="position: absolute; left:55%; top:1%; z-index: 10000;" onclick="panelToggle();">Toggle Panel</button>
-    <div id="map-container">
-        <div id="map-holder"></div>
-        <div id="drop-container">
-            <div id="drop-silhouette"></div>
-        </div>
-    </div>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div id="geojson-controls">
+      <button onclick="document.getElementById('geojson-input').select();">Select All</button>
+      <a id="download-link" href="data:;base64," download="geojson.json">
+          <button>Download</button>
+      </a>
+  </div>
+  <textarea id="geojson-input" placeholder="Drag and drop GeoJSON onto the map or paste it here to begin editing."></textarea>
+</div>
+
+<div id="main">
+  <div id="map-container">
+      <div id="map-holder"></div>
+      <div id="drop-container">
+          <div id="drop-silhouette"></div>
+      </div>
+  </div>
+  <span class="menu-button" onclick="openNav()">&#9776;</span>
+</div>
+
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB21G62pnb0d8fT1gRhaenbzxRYasucbjI"></script>
     <script type="text/javascript" src="js/min/editor.min.js"></script>
 </body>

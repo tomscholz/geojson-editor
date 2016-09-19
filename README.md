@@ -1,3 +1,5 @@
+![alt tag](https://raw.github.com/tomscholz/geojson-editor/master/images/logo.gif)
+===========
 # Better GeoJson-Editor
 This is a modified version of Googles [Simple GeoJSON Editor](https://google-developers.appspot.com/maps/documentation/utils/geojson/).
 

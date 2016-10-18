@@ -117,95 +117,20 @@ function setGeoJsonValidity(newVal) {
     }
 }
 
-// Control the drag and drop panel. Adapted from this code sample:
-// https://developers.google.com/maps/documentation/javascript/examples/layer-data-dragndrop
-function showPanel(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    dropContainer.className = 'visible';
-    return false;
-}
-
-function hidePanel() {
-    dropContainer.className = '';
-}
-
-function handleDrop(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    hidePanel();
-
-    var files = e.dataTransfer.files;
-    if (files.length) {
-        // process file(s) being dropped
-        // grab the file data from each file
-        for (var i = 0, file; file = files[i]; i++) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                map.data.addGeoJson(JSON.parse(e.target.result));
-            };
-            reader.onerror = function(e) {
-                console.error('reading failed');
-            };
-            reader.readAsText(file);
-        }
-    } else {
-        // process non-file (e.g. text or html) content being dropped
-        // grab the plain text version of the data
-        var plainText = e.dataTransfer.getData('text/plain');
-        if (plainText) {
-            map.data.addGeoJson(JSON.parse(plainText));
-        }
-    }
-    // prevent drag event from bubbling further
-    return false;
-}
-
-// Styling related functions
-function resizeGeoJsonInput() {
-    var geoJsonInputRect = geoJsonInput.getBoundingClientRect();
-    var panelRect = panel.getBoundingClientRect();
-    geoJsonInput.style.height = panelRect.bottom - geoJsonInputRect.top - 8 + "px";
-}
 
 // Custom JS by tomscholz
-
-var mapResized = false;
-
-// Toggle the visibility of the left panel
-function toggle_visibility(id) {
-    var displayState = document.getElementById(id);
-    if (displayState.style.display == 'block') {
-        displayState.style.display = 'none';
-    } else {
-        displayState.style.display = 'block';
-    }
-}
-
-// Change width of the map when panel toggels
-function changeWidth(id) {
-    var width = document.getElementById(id);
-    if (width.style.width == '64.9%') {
-        width.style.width = '100%';
-    } else {
-        width.style.width = '64.9%';
-    }
-}
-
-// Resize the map
-function resizeMap(map) {
-    google.maps.event.trigger(map, 'resize');
-    mapResized = true;
-}
-
-// Call all functions at once
-function panelToggle() {
-    toggle_visibility('panel');
-    changeWidth('map-container');
-    resizeMap(map);
-}
 
 // Alert on unload
 window.onbeforeunload = function() {
     return 'Are you sure you want to leave?';
 };
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("main").style.marginLeft = "300px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}

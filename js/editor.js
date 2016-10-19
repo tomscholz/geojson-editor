@@ -7,6 +7,9 @@ var panel;
 var geoJsonInput;
 var downloadLink;
 
+document.addEventListener( "DOMContentLoaded", readFromLocalStorageFunction, false );
+setTimeout(saveToLocalStorage,300000);
+
 function init() {
     // Initialise the map.
     map = new google.maps.Map(document.getElementById('map-holder'), {
@@ -205,6 +208,17 @@ function panelToggle() {
     resizeMap(map);
 }
 
+function readFromLocalStorageFunction(){
+    if(typeof(localStorage.data) != undefined){
+        if(window.confirm("Do you want to continue from where you left?")){
+            document.getElementById('geojson-input').value = JSON.parse(localStorage.data)
+        }
+    }   
+}
+
+function saveToLocalStorage(){
+    localStorage.data = JSON.stringify(geoJsonInput.value);
+}
 // Alert on unload
 window.onbeforeunload = function() {
     return 'Are you sure you want to leave?';

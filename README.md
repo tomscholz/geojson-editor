@@ -13,7 +13,7 @@ This is a modified version of Googles [Simple GeoJSON Editor](https://google-dev
 * [Script to remove specific properties from geojson](https://gist.github.com/tomscholz/defaa75b7bcb3f2b21b5f047acdd8f77)
 
 # Coming soon...
-* Redesign
+* https://github.com/tomscholz/geojson-editor/tree/redesign 
 
 # Can I contribute to this thing?
 Yes, of course! The process is as follows:

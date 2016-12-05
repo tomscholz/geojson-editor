@@ -1,5 +1,5 @@
 {
-  "name": "geojson-editor",
+  "name": "geojson editor",
   "version": "0.1.0",
   "description": "The modified version of Googles Simple GeoJSON Editor",
   "main": "index.html",

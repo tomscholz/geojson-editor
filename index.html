@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div id="panel">
+  <div id="panel" style="display: block;">
         <div id="panel-content">
-            <div id="panel-title">Better GeoJSON editor</div>
+            <div id="panel-title">GeoJSON editor</div>
             <hr/>
             <div id="geojson-controls">
                 <button onclick="document.getElementById('geojson-input').select();">Select All</button>
@@ -23,20 +23,14 @@
         </div>
     </div>
     <button style="position: absolute; left:55%; top:1%; z-index: 10000;" onclick="panelToggle();">Toggle Panel</button>
-    <div id="map-container">
+    <div id="map-container" style="width: 64.9%;">
         <div id="map-holder"></div>
         <div id="drop-container">
             <div id="drop-silhouette"></div>
         </div>
     </div>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB21G62pnb0d8fT1gRhaenbzxRYasucbjI"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLW6rxS6R6aCGt16qCBq99SDIR3FwjO9M"></script>
     <script type="text/javascript" src="js/min/editor.min.js"></script>
-    <script>
-        window.setInterval(function(){
-            // console.log('download');
-            document.getElementById('download-link').click();
-        }, 300000);
-    </script>
 </body>
 
 </html>

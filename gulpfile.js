@@ -22,8 +22,8 @@ gulp.task('compileJS', function () {
 
 // Watch files for changes and recompile
 gulp.task('watch', function() {
-    gulp.watch('/css/*.css', ['compileCSS']);
-    gulp.watch('/js/*.js', ['compileJS']);
+    gulp.watch('css/styles.css', ['compileCSS']);
+    gulp.watch('js/editor.js', ['compileJS']);
 });
 
 gulp.task('build', ['compileJS', 'compileCSS']);

@@ -7,9 +7,6 @@ var panel;
 var geoJsonInput;
 var downloadLink;
 
-document.addEventListener("DOMContentLoaded", readFromLocalStorageFunction, false);
-setTimeout(saveToLocalStorage, 300000);
-
 function init() {
     // Initialise the map.
     map = new google.maps.Map(document.getElementById('map-holder'), {

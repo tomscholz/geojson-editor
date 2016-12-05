@@ -2,4 +2,4 @@
 .DS_Store
 # Prepros config files
 /prepros.cfg
-  
+node_modules/
